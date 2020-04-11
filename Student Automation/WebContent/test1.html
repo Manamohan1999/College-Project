@@ -1,0 +1,85 @@
+<html>
+<head>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.0/css/mdb.min.css" rel="stylesheet">
+ 
+
+</head>
+
+<body>
+
+<form method="post" id="myform" action="test1.jsp" class="form-group">
+
+
+First no: <input type="text" id="1no" name="1no" class="form-control validate">
+Second no: <input type="text" id="2no" name="2no" class="form-control validate">
+<button id="mybtn" class="btn btn-success">Add</button>
+<button id="mybtn" class="btn btn-primary">Sub</button>
+<p >Result: <span id="msg" class="text-danger font-weight-bold"></span></p>
+</form>
+
+
+
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.0/js/mdb.min.js"></script>
+
+
+
+ 
+ <script type="text/javascript">
+
+	alert("please change the password if u logged in for very first time ");
+	$('#mybtn').click(function(){
+	
+		
+		 $.post($('#myform').attr("action"),$("#myform input").serializeArray(),function(info){
+			 $('#msg').html(info);
+		 });
+		 
+		 clearInput();
+ 		
+		});
+
+
+	
+	$('#myform').submit(function(){
+		
+		return false;
+	});	
+	
+	
+	
+	function clearInput(){
+		
+		$('#myform :input').each(function(){
+			
+			$(this).val('');
+		});
+	}
+	
+	
+</script>
+
+
+
+
+
+
+</body>
+
+
+
+</html>

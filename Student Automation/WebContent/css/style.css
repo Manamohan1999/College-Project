@@ -1,0 +1,168 @@
+*{
+
+
+	margin: 0; padding: 0; box-sizing: border-box;
+		font-family: 'Bitter', serif;
+
+}
+
+
+
+/*
+.navbar:before{
+
+	content: "";
+	position: absolute;
+	top:0%;
+	bottom: 0%;
+		left:0%;
+	right: 0%;
+        opacity: .3;
+        z-index: -1;
+        background: linear-gradient(top right,#1e5799 0%,#3ccdbb 0%,#16c9f6 100%);
+  
+}
+*/
+
+/*
+.dropdown-menu{
+background-color: black;
+font-weight: bold;
+
+}
+
+.header a{
+font-weight: bold;
+	color: white;
+}
+
+*/
+
+.nav-item a{
+
+	
+	font-weight: bold;
+}
+
+
+/* ............ css for middile div stats here  .........**/
+.header-extradiv{
+margin: 100px 0;
+width: 100%;
+height: auto;
+text-align: center;
+
+}
+
+
+.extra-div{
+background: #fff;
+border: medium none;
+padding: 50px!important;
+border-radius: 3px;
+transition: 0.3s;
+}
+
+.extra-div:hover{
+box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+transform: translate(-20px);
+}
+
+
+.developer-div{
+
+border: medium none;
+/*padding: 50px!important;
+*/border-radius: 3px;
+transition: 0.3s;
+}
+
+
+
+.developer-div:hover{
+box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+transform: translate(-20px);	
+}
+
+
+
+
+/* ............ css for middile div  ends here.........**/
+
+
+
+/* CUSTOMIZE THE CAROUSEL(image slides shares) -------------------------------------------------- */
+
+
+/* Carousel base class */
+.carousel {
+  margin-bottom: 4rem;
+}
+
+
+/* Declare heights because of positioning of img element */
+.carousel-item {
+  height: 32rem;
+  background-color: #777;
+}
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 32rem;
+  
+}
+          
+    
+
+.carousel-item{
+
+  transition: -webkit-transform 0.5s ease;
+
+  transition: transform 0.5s ease;
+
+transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+
+-webkit-backface-visibility: visible;
+backface-visibility: visible;
+
+
+}
+          
+          
+  .carousel-inner{
+  width:100%;
+  height:100%
+  
+  }        
+          
+          
+          
+          
+               /**************image slideshare ends here************/
+
+
+
+/****************************login form design starts here **************/
+.form-elegant .font-small {
+    font-size: 0.8rem; }
+
+.form-elegant .z-depth-1a {
+    -webkit-box-shadow: 0 2px 5px 0 rgba(55, 161, 255, 0.26), 0 4px 12px 0 rgba(121, 155, 254, 0.25);
+    box-shadow: 0 2px 5px 0 rgba(55, 161, 255, 0.26), 0 4px 12px 0 rgba(121, 155, 254, 0.25); }
+
+.form-elegant .z-depth-1-half,
+.form-elegant .btn:hover {
+    -webkit-box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15);
+    box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15); }
+
+.form-elegant .modal-header {
+    border-bottom: none; }
+
+.modal-dialog .form-elegant .btn .fab {
+    color: #2196f3!important; }
+
+.form-elegant .modal-body, .form-elegant .modal-footer {
+    font-weight: 400; }
+    /****************************login form design ends here **************/

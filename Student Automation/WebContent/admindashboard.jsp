@@ -481,7 +481,7 @@ catch(Exception e){
       <span class="table-add float-right mb-1 mr-2" ><a href="#" class="text-success" data-toggle="modal" data-target="#modalRegisterForm"><i
             class="fas fa-plus fa-2x" aria-hidden="true"></i></a></span>
 
-      <table class="table table-bordered table-responsive-md table-striped text-center">
+      <table  id="adminTable"  class="table table-bordered table-responsive-md table-striped text-center" cellspacing="0" width="100%">
         <thead>
           <tr>
           <th class="text-center">ID</th>
@@ -535,7 +535,19 @@ catch(Exception e){
        
          
         </tbody>
+        <tfoot>
+    <tr>
+          <th class="text-center">ID</th>
+            <th class="text-center">Admin Name</th>
+            <th class="text-center">Email</th>
+            <th class="text-center">Contact</th>
+            <th class="text-center">Position</th>
+            <th class="text-center">Edit</th>
+            <th class="text-center">Remove</th>
+    </tr>
+  </tfoot>
       </table>
+
     </div>
   </div>
 
@@ -570,19 +582,10 @@ catch(Exception e){
     <div id="table" class="table-editable">
       <span class="table-add float-right mb-1 mr-2" ><a href="#" class="text-success" data-toggle="modal" data-target="#modalStudentRegisterForm"><i
             class="fas fa-plus fa-2x" aria-hidden="true"></i></a></span>
-            
-         
-        <!-- Search form -->
-          <form class="form-inline active-pink-4">
-            <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search" name="searchQuery">
-                         
-               <i class="fas fa-search" aria-hidden="true"></i>
-                      </form>
-              
-              
-              
-      <table class="table table-bordered table-responsive-md table-striped text-center">
-        <thead>
+
+
+<table id="studentTable" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+ <thead>
           <tr>
             <th class="text-center">RegdNo</th>
             <th class="text-center"> Name</th>
@@ -600,17 +603,7 @@ catch(Exception e){
 	try{	
 	
 		Statement  st=con.createStatement();
-		String searchQuery=request.getParameter("searchQuery");
-		String sql;
-		if(searchQuery!=null){
-			sql="SELECT * FROM studenttab where regdno like '%"+searchQuery+"%' or name like '%"+searchQuery+"%' or contact like '%"+searchQuery+"%'  ";
-			
-		}else{
-			sql="SELECT * FROM studenttab order by regdno";
-			
-		}
-		
-		
+		String sql ="SELECT * FROM studenttab order by regdno";
 
 		ResultSet rs = st.executeQuery(sql);
 		while(rs.next()){
@@ -619,20 +612,20 @@ catch(Exception e){
         
         
           <tr>
-            <td class="pt-3-half" contenteditable="true"><%=rs.getString("regdno") %> </td>
-            <td class="pt-3-half" contenteditable="true"><%=rs.getString("NAME") %> </td>
-            <td class="pt-3-half" contenteditable="true"><%=rs.getString("BRANCH") %></td>
-            <td class="pt-3-half" contenteditable="true"><%=rs.getString("ADDRESS") %></td>
-            <td class="pt-3-half" contenteditable="true"><%=rs.getString("CONTACT") %></td>
+            <td class="pt-3-half text-center" contenteditable="true"><%=rs.getString("regdno") %> </td>
+            <td class="pt-3-half text-center" contenteditable="true"><%=rs.getString("NAME") %> </td>
+            <td class="pt-3-half text-center" contenteditable="true"><%=rs.getString("BRANCH") %></td>
+            <td class="pt-3-half text-center" contenteditable="true"><%=rs.getString("ADDRESS") %></td>
+            <td class="pt-3-half text-center" contenteditable="true"><%=rs.getString("CONTACT") %></td>
 
            
 
-            <td>
+            <td class="pt-3-half text-center">
               <span class="table-edit"><button type="button" onclick="window.location.href = 'EditStudentTab.jsp?regdno=<%=rs.getString("regdno") %>';"
                   class="btn btn-teal btn-rounded btn-sm my-0" id="editbtn" >Edit</button></span>
             </td>
             
-            <td>
+            <td class="pt-3-half text-center">
               <span class="table-remove"><button type="button"   onclick="window.location.href = 'DeleteStudentTab.jsp?usrregdno=<%=rs.getString("regdno") %>';"                                                                         
                   class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
             </td>
@@ -641,13 +634,24 @@ catch(Exception e){
 		}
 		
 	} catch (Exception e) {
-		
+		e.printStackTrace();
 	}
 %>
        
          
         </tbody>
-      </table>
+  <tfoot>
+    <tr>
+     <th class="text-center">RegdNo</th>
+            <th class="text-center"> Name</th>
+            <th class="text-center">Branch</th>
+            <th class="text-center">District</th>
+            <th class="text-center">Contact</th>
+             <th class="text-center">Edit</th>
+            <th class="text-center">Remove</th>
+    </tr>
+  </tfoot>
+</table>
     </div>
   </div>
 
@@ -1112,6 +1116,8 @@ $('button#update').click(function(){
 
 $(document).ready(function () {
 	$('#staffTable').DataTable();
+	$('#studentTable').DataTable();
+	$('#adminTable').DataTable();
 	$('.dataTables_length').addClass('bs-select');
 	});
 </script>

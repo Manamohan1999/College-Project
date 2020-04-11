@@ -127,16 +127,16 @@ catch(Exception e)
 
 
 String rgdno=request.getParameter("regdno");
-String email=request.getParameter("email");
+String name=request.getParameter("name");
 String contact=request.getParameter("cntct");
 String address=request.getParameter("address");
 
-if( email!=null && contact!=null && address!=null){
+if( name!=null && contact!=null && address!=null){
 	
-String query="update studenttab set email=?, contact=?, address=? where regdno='"+rgdno+"'";
+String query="update studenttab set name=?, contact=?, address=? where regdno='"+rgdno+"'";
 	PreparedStatement ps=con.prepareStatement(query);
 
-	ps.setString(1,email);
+	ps.setString(1,name);
 	ps.setString(2,contact);
 	ps.setString(3,address);
 

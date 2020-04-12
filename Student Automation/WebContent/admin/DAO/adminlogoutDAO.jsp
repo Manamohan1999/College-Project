@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
- <link rel="icon" href="images/favicon.ico">
+ <link rel="icon" href="../../images/favicon.ico">
 <title>KMBB: Student Automation</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1  shrink-to-fit=no">
@@ -40,7 +40,7 @@ if(session.getAttribute("user")==null){
 	
 	session.removeAttribute("user");
     session.invalidate();
-    response.sendRedirect("index.html");
+    response.sendRedirect("../../index.html");
 }else{
         
   
@@ -56,7 +56,7 @@ session.invalidate();
 
 
   <a class="nav-link" href="index.html"><i class="fa fa-home" aria-hidden="true"></i>Home <span class="sr-only ">(current)</span></a>
-<h4 class=" text-center font-weight-bold">want to login again!  <a href="adminlogin.html" class="badge badge-default">Login here</a></h4>
+<h4 class=" text-center font-weight-bold">want to login again!  <a href="../../adminlogin.html" class="badge badge-default">Login here</a></h4>
 
 
 

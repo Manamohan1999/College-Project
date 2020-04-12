@@ -3,13 +3,13 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<%@include file="connector.jsp"%>
+<%@include file="../connector.jsp"%>
 
 <%
     if(session.getAttribute("user")==null){
     	session.removeAttribute("user");
          session.invalidate();
-    response.sendRedirect("adminlogin.html");
+    response.sendRedirect("../adminlogin.html");
         
     }
 
@@ -22,14 +22,14 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1  shrink-to-fit=no" >
 <meta charset="ISO-8859-1" content="text/html">
- <link rel="icon" href="images/favicon.ico">
+ <link rel="icon" href="../images/favicon.ico">
 <title>KMBB: Student Automation</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Bitter&display=swap" rel="stylesheet">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
  
-    <link rel="stylesheet" href="css/admindasbdstyle.css">
+    <link rel="stylesheet" href="../css/admindasbdstyle.css">
   <!-- Font Awesome -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 <!-- Bootstrap core CSS -->
@@ -48,7 +48,7 @@
     <div class="aqua-gradient color-block" id="sidebar-wrapper">
       <div class="sidebar-heading">
        <a class="logo-wrapper waves-effect">
-        <img src="images/logo22.png" alt="logo" class="img-fluid "  width="150px;" height="150px;"> <p class="text-center font-weight-bold animated tada infinite">Admin Panel</p>
+        <img src="../images/logo22.png" alt="logo" class="img-fluid "  width="150px;" height="150px;"> <p class="text-center font-weight-bold animated tada infinite">Admin Panel</p>
       </a> 
   </div>
       <div class="list-group list-group-flush ">
@@ -135,7 +135,7 @@
       <li class="nav-item avatar dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
-          <img src="images/logo22.png" height="35" width="35" class="rounded-circle z-depth-0"
+          <img src="../images/logo22.png" height="35" width="35" class="rounded-circle z-depth-0"
             alt="avatar image">
         </a>
         <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary aqua-gradient color-block"
@@ -156,7 +156,7 @@
 
 
 <!--  @@@@@@@@@@@@@ Add Admin form(modalRegisterForm) @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
-<form action="addAdminDAO.jsp" method="post" id="addAdminform">
+<form action="DAO/addAdminDAO.jsp" method="post" id="addAdminform">
 
 <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
@@ -220,7 +220,7 @@
 
 
 <!--  ^^^^^^^^^^^^^^^^^^^^^Add Student form(modalStudentRegisterForm)^^^^^^^^^^^^^^^^^^^^ -->
-<form action="addStudentDAO.jsp" method="post" id="addStudentform">
+<form action="DAO/addStudentDAO.jsp" method="post" id="addStudentform">
 
 <div class="modal fade" id="modalStudentRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
@@ -295,7 +295,7 @@
 
 
 <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@ password change form starts here  -->
-<form action="admnchngpswDAO.jsp" method="post" id="changepswform">
+<form action="DAO/admnchngpswDAO.jsp" method="post" id="changepswform">
 
 <% 
 try{
@@ -389,7 +389,7 @@ catch(Exception e)
           </p>
          
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-         <a href="adminlogoutDAO.jsp" ><button type="button" class="btn btn-primary">Logout</button></a>
+         <a href="DAO/adminlogoutDAO.jsp" ><button type="button" class="btn btn-primary">Logout</button></a>
        
         </div>
       </div>
@@ -917,7 +917,7 @@ catch(Exception e){
 
 <!--The following code will work when it is toggled by edit profile button**************************  -->
 
- <form action="adminUpdateDAO.jsp" method="post" id="updateform">
+ <form action="DAO/adminUpdateDAO.jsp" method="post" id="updateform">
  
  <%
 try{

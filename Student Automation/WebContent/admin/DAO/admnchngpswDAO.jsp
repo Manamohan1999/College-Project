@@ -2,7 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@page import="java.sql.*"%>
-<%@include file="connector.jsp"%>
+<%@include file="/connector.jsp"%>
 <html>
 <body>
 	<%
@@ -26,6 +26,9 @@ if(newpsw.equals(cnfpsw)){
 		%>
 
 	<h5 align="center">password changed successfully</h5>
+		   <script type="text/javascript">
+window.location.replace("admindashboard.jsp");
+</script>
 
 	<%
 		}else{
